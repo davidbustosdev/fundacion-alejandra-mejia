@@ -4,21 +4,66 @@ const { mode = "light" } = Astro.props;
 ---
 
 <a href="/" class="logo">
-  <Image
-    src={mode == "light" ? `/img/logo.svg` : `/img/logo-w.svg`}
-    alt="logo"
-    width="204"
-    height="50"
-    fetchpriority="high"
-    loading="eager"
-    class="w-auto h-auto dark:hidden"
-  />
-  <Image
-    src="/img/logo-w.svg"
-    alt="logo"
-    width="204"
-    height="50"
-    loading="eager"
-    class="hidden dark:block"
-  />
+    <svg
+        width="80"
+        height="80"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <defs>
+            <linearGradient
+                id="heartGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+                <stop offset="0%" stop-color="#3BAFDA"></stop>
+                <stop offset="100%" stop-color="#48CFAD"></stop>
+            </linearGradient>
+        </defs>
+
+        <!-- Círculo de fondo -->
+        <circle cx="256" cy="256" r="220" fill="#F8FAFC"></circle>
+
+        <!-- Mano izquierda -->
+        <path
+            d="M140 290
+           C110 260, 105 210, 140 185
+           C165 165, 200 170, 220 195
+           L256 240
+           L220 295
+           C200 325, 165 325, 140 290Z"
+            fill="#3BAFDA"></path>
+
+        <!-- Mano derecha -->
+        <path
+            d="M372 290
+           C402 260, 407 210, 372 185
+           C347 165, 312 170, 292 195
+           L256 240
+           L292 295
+           C312 325, 347 325, 372 290Z"
+            fill="#48CFAD"></path>
+
+        <!-- Corazón central -->
+        <path
+            d="M256 355
+           C180 300, 145 260, 145 210
+           C145 165, 180 135, 220 135
+           C240 135, 252 145, 256 155
+           C260 145, 272 135, 292 135
+           C332 135, 367 165, 367 210
+           C367 260, 332 300, 256 355Z"
+            fill="url(#heartGradient)"></path>
+
+        <!-- Figura humana -->
+        <circle cx="256" cy="215" r="18" fill="#FFFFFF"></circle>
+        <path
+            d="M226 275
+           C226 245, 286 245, 286 275
+           L286 295
+           L226 295Z"
+            fill="#FFFFFF"></path>
+    </svg>
 </a>
