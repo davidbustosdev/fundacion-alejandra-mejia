@@ -33,10 +33,4 @@ const services = (await getCollection("service"))
             </div>
         </div>
     </div>
-
-    <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10 relative"
-    >
-        {services.map((service) => <ServiceCard {...service} />)}
-    </div>
 </section>

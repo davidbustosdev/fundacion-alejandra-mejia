@@ -8,23 +8,19 @@ export const SITE_DESCRIPTION =
 export const NAV_MENU = [
   {
     url: "/",
-    title: "Home",
+    title: "Inicio",
   },
   {
     url: "#",
-    title: "About us",
+    title: "Acerca de nosotros",
   },
   {
     url: "/service",
-    title: "Service",
+    title: "El equipo",
   },
   {
     url: "/team",
     title: "Team",
-  },
-  {
-    url: "/blog",
-    title: "Blog",
   },
   {
     url: "/contact",
