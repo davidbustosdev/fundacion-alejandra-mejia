@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+
+const programas = [
+  {
+    icon: "lucide:heart-handshake",
+    titleKey: "programas.card1.title",
+    descKey: "programas.card1.desc",
+    title: "Apoyo Familiar",
+    desc: "Entregamos ayudas alimentarias, kits escolares y acompañamiento psicosocial...",
+  },
+  {
+    icon: "lucide:users",
+    titleKey: "programas.card2.title",
+    descKey: "programas.card2.desc",
+    title: "Inclusión y Discapacidad",
+    desc: "Promovemos la inclusión social y laboral de personas con discapacidad...",
+  },
+  {
+    icon: "lucide:briefcase",
+    titleKey: "programas.card3.title",
+    descKey: "programas.card3.desc",
+    title: "Empleo Digno",
+    desc: "A través de la fabricación de productos de incienso, generamos empleo digno...",
+  },
+  {
+    icon: "lucide:activity",
+    titleKey: "programas.card4.title",
+    descKey: "programas.card4.desc",
+    title: "Enfermedades Huérfanas",
+    desc: "Acompañamos a pacientes con enfermedades huérfanas y sus familias...",
+  },
+];
+---
+
+<section id="programas" class="section">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 data-i18n="programas.title">Nuestros Programas</h2>
+      <p class="text-gray-600 dark:text-gray-300 mt-2" data-i18n="programas.desc">
+        A través de nuestras iniciativas, buscamos generar un impacto real...
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {programas.map((p) => (
+        <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-6 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-gray-700/50 transition-shadow">
+          <div class="bg-main/10 text-main w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+            <Icon name={p.icon} size={24} />
+          </div>
+          <h3 class="text-lg font-semibold mb-2" data-i18n={p.titleKey}>{p.title}</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed" data-i18n={p.descKey}>{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,19 +1,19 @@
 ---
 import { NAV_MENU } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
 ---
 
-<div class="hidden lg:block mx-auto">
-  <ul class="menu menu-horizontal gap-x-4">
-    <!-- Navbar menu content here -->
-    {
-      NAV_MENU.map((item) => (
-        <li>
-          <HeaderLink href={item.url} class="hover:bg-white">
-            {item.title}
-          </HeaderLink>
-        </li>
-      ))
-    }
+<nav class="hidden lg:block mx-auto">
+  <ul class="menu menu-horizontal gap-x-1">
+    {NAV_MENU.map((item) => (
+      <li>
+        <a
+          href={item.url}
+          class="text-sm font-medium px-3 py-2 rounded-lg hover:text-main hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          data-i18n={item.key}
+        >
+          {item.key}
+        </a>
+      </li>
+    ))}
   </ul>
-</div>
+</nav>

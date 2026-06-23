@@ -1,36 +1,42 @@
 ---
-import ServiceCard from "../../components/card/ServiceCard.astro";
-import { getCollection } from "astro:content";
 
-const services = (await getCollection("service"))
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 3);
 ---
 
-<section class="section section-services">
-    <div class="container">
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
-        >
-            <h2 class="capitalize">Un sueño que nació para servir</h2>
-            <div>
-                <div class="flex flex-wrap justify-between items-center gap-3">
-                </div>
-                <p class="mb-3">
-                    La Fundación Alejandra Mejía surge del compromiso de
-                    construir una sociedad más solidaria, donde ninguna familia
-                    tenga que enfrentar sola las dificultades económicas, las
-                    condiciones de discapacidad o los desafíos asociados a
-                    enfermedades de alta complejidad.
-                </p>
-
-                Nuestro propósito es acompañar, apoyar y generar oportunidades
-                para quienes más lo necesitan, promoviendo la inclusión, la
-                dignidad y el bienestar de cada persona. Creemos que la ayuda
-                social debe ir más allá de la asistencia temporal; por ello
-                impulsamos proyectos productivos que permiten generar empleo y
-                fortalecer la autonomía de las familias beneficiadas.
-            </div>
+<section id="mision" class="section section-alt">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 data-i18n="mision.title">Nuestra Misión</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6" data-i18n="mision.desc">
+          Trabajar por el bienestar de las familias en situación de vulnerabilidad...
+        </p>
+      </div>
+      <div class="grid gap-4">
+        <div class="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm dark:shadow-none border border-gray-100 dark:border-gray-700">
+          <div class="bg-main/10 text-main rounded-full p-2 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <p class="font-medium" data-i18n="mision.item1">Apoyo a familias de escasos recursos</p>
         </div>
+        <div class="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm dark:shadow-none border border-gray-100 dark:border-gray-700">
+          <div class="bg-main/10 text-main rounded-full p-2 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          </div>
+          <p class="font-medium" data-i18n="mision.item2">Inclusión de personas con discapacidad</p>
+        </div>
+        <div class="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm dark:shadow-none border border-gray-100 dark:border-gray-700">
+          <div class="bg-main/10 text-main rounded-full p-2 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <p class="font-medium" data-i18n="mision.item3">Apoyo a enfermedades huérfanas</p>
+        </div>
+        <div class="flex items-start gap-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm dark:shadow-none border border-gray-100 dark:border-gray-700">
+          <div class="bg-main/10 text-main rounded-full p-2 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <p class="font-medium" data-i18n="mision.item4">Generación de empleo digno</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

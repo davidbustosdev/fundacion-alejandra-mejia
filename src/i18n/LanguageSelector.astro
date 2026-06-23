@@ -1,0 +1,21 @@
+---
+import { LANGUAGES } from "./translations";
+---
+
+<div class="flex gap-1 items-center">
+  {LANGUAGES.map((lang) => (
+    <button
+      class="lang-btn text-sm px-2 py-1 rounded hover:bg-main/20 transition-colors uppercase font-semibold"
+      data-lang={lang.code}
+      aria-label={lang.label}
+    >
+      {lang.code}
+    </button>
+  ))}
+</div>
+
+<style>
+  .lang-btn.active {
+    color: var(--color-main);
+  }
+</style>

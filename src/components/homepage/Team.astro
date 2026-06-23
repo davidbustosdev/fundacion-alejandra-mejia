@@ -1,32 +1,51 @@
 ---
-import TeamCard from "../card/TeamCard.astro";
-import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
-const team = (await getCollection("team"))
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 3);
+const team = [
+  {
+    name: "Alejandra Mejía",
+    role: "Directora Fundadora",
+    img: "/img/team/team1.jpg",
+  },
+  {
+    name: "María García",
+    role: "Coordinadora de Programas",
+    img: "/img/team/team2.jpg",
+  },
+  {
+    name: "Carlos López",
+    role: "Director de Operaciones",
+    img: "/img/team/team3.jpg",
+  },
+];
 ---
 
-<section class="section section-services">
-    <div class="container">
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
-        >
-            <h2 class="capitalize">Nuestra Misión</h2>
-            <div>
-                <p class="mb-3">
-                    Trabajar por el bienestar de las familias en situación de
-                    vulnerabilidad, brindando apoyo social, acompañamiento y
-                    oportunidades de desarrollo, mientras promovemos la
-                    inclusión de personas con discapacidad y la generación de
-                    empleo digno mediante proyectos productivos sostenibles.
-                </p>
-            </div>
-        </div>
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10 relative"
-        >
-            {team.map((people) => <TeamCard {...people} />)}
-        </div>
+<section id="equipo" class="section section-alt">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 data-i18n="equipo.title">Nuestro Equipo</h2>
+      <p class="text-gray-600 dark:text-gray-300" data-i18n="equipo.desc">
+        Conoce a las personas apasionadas que hacen posible nuestra misión cada día.
+      </p>
     </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {team.map((member) => (
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-gray-700/50 transition-shadow text-center">
+          <Image
+            src={member.img}
+            alt={member.name}
+            width={400}
+            height={400}
+            format="webp"
+            quality={45}
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">{member.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>

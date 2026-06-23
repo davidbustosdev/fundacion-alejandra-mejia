@@ -2,30 +2,26 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="section section-1">
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div class="order-2 md:order-1">
-                <h2>Nuestra Visión</h2>
-                <p class="mb-6">
-                    Ser una fundación reconocida por transformar vidas a través
-                    de la solidaridad, la inclusión y la generación de
-                    oportunidades, impactando positivamente a miles de familias
-                    y convirtiéndonos en un referente de desarrollo social
-                    sostenible en Colombia.
-                </p>
-            </div>
-            <div class="order-1 md:order-2">
-                <Image
-                    src="/img/img1.webp"
-                    alt=""
-                    width="478"
-                    height="421"
-                    format="webp"
-                    quality={45}
-                    class="w-auto h-auto m-auto rounded-2xl object-cover object-center"
-                />
-            </div>
-        </div>
+<section id="nosotros" class="section">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 data-i18n="nosotros.title">Nuestra Visión</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="nosotros.desc">
+          Ser una fundación reconocida por transformar vidas...
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <Image
+          src="/img/img1.webp"
+          alt=""
+          width="478"
+          height="421"
+          format="webp"
+          quality={45}
+          class="rounded-2xl object-cover shadow-lg"
+        />
+      </div>
     </div>
+  </div>
 </section>

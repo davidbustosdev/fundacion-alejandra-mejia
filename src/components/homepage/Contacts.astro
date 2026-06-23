@@ -2,113 +2,91 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="section section-contacts">
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-                <h3 class="font-semibold text-xl lg:text-[40px]">
-                    Contáctanos
-                </h3>
-                <div class="mt-10 grid gap-6">
-                    <div
-                        class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
-                    >
-                        <div
-                            class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
-                        >
-                            <Icon name="lucide:phone-call" size={24} />
-                        </div>
-                        <div>
-                            <p class="font-semibold text-lg mb-0">Llámanos</p>
-                            <a href="tel:+(08)255201888">+(57) xxx xxx xx xx</a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
-                    >
-                        <div
-                            class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
-                        >
-                            <Icon name="lucide:mail" size={24} />
-                        </div>
-                        <div>
-                            <p class="font-semibold text-lg mb-0">Escríbenos</p>
-                            <a href="mailto:Hello@procleaning.com"
-                                >Hello@gmail.com</a
-                            >
-                        </div>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
-                    >
-                        <div
-                            class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
-                        >
-                            <Icon name="lucide:map-pin" size={24} />
-                        </div>
-                        <div>
-                            <p class="font-semibold text-lg mb-0">Dirección</p>
-                            <a href="#"
-                                ><address class="not-italic">
-                                    Canta Claro
-                                </address></a
-                            >
-                        </div>
-                    </div>
-                </div>
+<section id="contacto" class="section section-alt">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 data-i18n="contacto.title">Contáctanos</h2>
+        <p class="text-gray-600 dark:text-gray-300 mt-2 mb-8" data-i18n="contacto.form.desc">
+          Déjanos tu mensaje y te responderemos a la brevedad posible.
+        </p>
+        <div class="grid gap-5">
+          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
+              <Icon name="lucide:phone-call" size={20} />
             </div>
             <div>
-                <p class="text-sm mb-0">Contact info</p>
-                <h3 class="font-semibold text-xl lg:text-[40px] mb-3">
-                    Keep In Touch
-                </h3>
-                <p class="">
-                    We prioritize responding to your inquiries promptly to
-                    ensure you receive the assistance you need in a timely
-                    manner
-                </p>
-
-                <form action="/" method="POST" class="mt-8 grid gap-3">
-                    <fieldset class="fieldset">
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            class="input w-full validator"
-                            id="contact-name"
-                            name="contact_name"
-                            required
-                        />
-                        <p class="validator-hint hidden">Required</p>
-                    </fieldset>
-
-                    <fieldset class="fieldset">
-                        <input
-                            type="text"
-                            placeholder="Email"
-                            class="input w-full validator"
-                            id="contact-email"
-                            name="contact_email"
-                            required
-                        />
-                        <p class="validator-hint hidden">Required</p>
-                    </fieldset>
-                    <fieldset class="fieldset">
-                        <textarea
-                            class="textarea w-full validator"
-                            placeholder="Message"
-                            id="contact-msg"
-                            name="contact_msg"
-                            required></textarea>
-                        <p class="validator-hint hidden">Required</p>
-                    </fieldset>
-                    <button
-                        class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 shadow-none lg:mr-auto"
-                        type="submit">Sent Massage</button
-                    >
-                </form>
+              <p class="font-semibold" data-i18n="contacto.call">Llámanos</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.phone">+57 xxx xxx xx xx</p>
             </div>
+          </div>
+          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
+              <Icon name="lucide:mail" size={20} />
+            </div>
+            <div>
+              <p class="font-semibold" data-i18n="contacto.email">Escríbenos</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.mail">info@fundacionalejandramejia.org</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
+              <Icon name="lucide:map-pin" size={20} />
+            </div>
+            <div>
+              <p class="font-semibold" data-i18n="contacto.address">Dirección</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.addr">Bogotá, Colombia</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm dark:shadow-none border border-gray-200 dark:border-gray-700">
+          <h3 class="text-2xl font-semibold mb-2" data-i18n="contacto.form.title">Escríbenos</h3>
+          <form action="/" method="POST" class="mt-6 grid gap-4">
+            <fieldset class="fieldset">
+              <input
+                type="text"
+                class="input w-full"
+                id="contact-name"
+                name="contact_name"
+                required
+                data-i18n="contacto.form.name"
+                placeholder="Nombre"
+              />
+            </fieldset>
+            <fieldset class="fieldset">
+              <input
+                type="email"
+                class="input w-full"
+                id="contact-email"
+                name="contact_email"
+                required
+                data-i18n="contacto.form.email"
+                placeholder="Correo electrónico"
+              />
+            </fieldset>
+            <fieldset class="fieldset">
+              <textarea
+                class="textarea w-full"
+                id="contact-msg"
+                name="contact_msg"
+                required
+                data-i18n="contacto.form.message"
+                placeholder="Mensaje"
+                rows={4}
+              ></textarea>
+            </fieldset>
+            <button
+              class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 w-full sm:w-auto"
+              type="submit"
+              data-i18n="contacto.form.submit"
+            >
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

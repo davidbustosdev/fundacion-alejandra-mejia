@@ -3,36 +3,71 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Drawer from "../components/Drawer.astro";
-const { title, description, image } = Astro.props;
+import { translations } from "../i18n/translations";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-import { ClientRouter } from "astro:transitions";
-
-const anim = {
-  old: {
-    name: "FadeIn",
-    duration: "0.5s",
-    easing: "ease-in",
-    direction: "reverse",
-  },
-  new: {
-    name: "FadeIn",
-    duration: "0.5s",
-    easing: "ease-in-out",
-  },
-};
-
-const customTransition = {
-  forwards: anim,
-  backwards: anim,
-};
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead title={title} description={description} />
+    <script is:inline>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("theme"); } catch (e) {}
+        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
   <body>
+    <script define:vars={{ translations }}>
+      (function () {
+        function applyLanguage(lang) {
+          var t = translations[lang];
+          if (!t) return;
+          document.documentElement.lang = lang;
+          document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var key = el.getAttribute("data-i18n");
+            if (key && t[key]) el.textContent = t[key];
+          });
+          document.querySelectorAll(".lang-btn").forEach(function (btn) {
+            btn.classList.toggle(
+              "active",
+              btn.getAttribute("data-lang") === lang
+            );
+          });
+          try { localStorage.setItem("i18n-lang", lang); } catch (e) {}
+        }
+
+        function init() {
+          var saved = null;
+          try { saved = localStorage.getItem("i18n-lang"); } catch (e) {}
+          var lang = saved || navigator.language?.split("-")[0] || "es";
+          if (!translations[lang]) lang = "es";
+          applyLanguage(lang);
+
+          document.addEventListener("click", function (e) {
+            var btn = e.target.closest("[data-lang]");
+            if (btn) {
+              var lang = btn.getAttribute("data-lang");
+              if (translations[lang]) applyLanguage(lang);
+            }
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+
     <div class="drawer min-h-screen">
       <input
         id="my-drawer-2"
@@ -40,10 +75,9 @@ const customTransition = {
         class="drawer-toggle"
         title="Toggle navigation menu"
       />
-      <label for="my-drawer-2" class="sr-only"> Toggle navigation menu </label>
       <div class="drawer-content flex flex-col min-h-screen">
-        <main class="min-h-screen flex flex-col">
-          <Header />
+        <Header />
+        <main class="flex-1">
           <slot />
         </main>
         <Footer />
