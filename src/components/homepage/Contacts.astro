@@ -3,90 +3,135 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section id="contacto" class="section section-alt">
-  <div class="container">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div>
-        <h2 data-i18n="contacto.title">Contáctanos</h2>
-        <p class="text-gray-600 dark:text-gray-300 mt-2 mb-8" data-i18n="contacto.form.desc">
-          Déjanos tu mensaje y te responderemos a la brevedad posible.
-        </p>
-        <div class="grid gap-5">
-          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
-              <Icon name="lucide:phone-call" size={20} />
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h2 data-i18n="contacto.title">Contáctanos</h2>
+                <p
+                    class="text-gray-600 dark:text-gray-300 mt-2 mb-8"
+                    data-i18n="contacto.form.desc"
+                >
+                    Déjanos tu mensaje y te responderemos a la brevedad posible.
+                </p>
+                <div class="grid gap-5">
+                    <div
+                        class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                    >
+                        <div
+                            class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0"
+                        >
+                            <Icon name="lucide:phone-call" size={20} />
+                        </div>
+                        <div>
+                            <p class="font-semibold" data-i18n="contacto.call">
+                                Llámanos
+                            </p>
+                            <p
+                                class="text-gray-600 dark:text-gray-300 text-sm"
+                                data-i18n="contacto.phone"
+                            >
+                                +57 xxx xxx xx xx
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                    >
+                        <div
+                            class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0"
+                        >
+                            <Icon name="lucide:mail" size={20} />
+                        </div>
+                        <div>
+                            <p class="font-semibold" data-i18n="contacto.email">
+                                Escríbenos
+                            </p>
+                            <p
+                                class="text-gray-600 dark:text-gray-300 text-sm"
+                                data-i18n="contacto.mail"
+                            >
+                                info@fundacionalejandramejia.org
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                    >
+                        <div
+                            class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0"
+                        >
+                            <Icon name="lucide:map-pin" size={20} />
+                        </div>
+                        <div>
+                            <p
+                                class="font-semibold"
+                                data-i18n="contacto.address"
+                            >
+                                Dirección
+                            </p>
+                            <p
+                                class="text-gray-600 dark:text-gray-300 text-sm"
+                                data-i18n="contacto.addr"
+                            >
+                                Cali, Colombia
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div>
-              <p class="font-semibold" data-i18n="contacto.call">Llámanos</p>
-              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.phone">+57 xxx xxx xx xx</p>
+                <div
+                    class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm dark:shadow-none border border-gray-200 dark:border-gray-700"
+                >
+                    <h3
+                        class="text-2xl font-semibold mb-2"
+                        data-i18n="contacto.form.title"
+                    >
+                        Escríbenos
+                    </h3>
+                    <form action="/" method="POST" class="mt-6 grid gap-4">
+                        <fieldset class="fieldset">
+                            <input
+                                type="text"
+                                class="input w-full"
+                                id="contact-name"
+                                name="contact_name"
+                                required
+                                data-i18n="contacto.form.name"
+                                placeholder="Nombre"
+                            />
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <input
+                                type="email"
+                                class="input w-full"
+                                id="contact-email"
+                                name="contact_email"
+                                required
+                                data-i18n="contacto.form.email"
+                                placeholder="Correo electrónico"
+                            />
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <textarea
+                                class="textarea w-full"
+                                id="contact-msg"
+                                name="contact_msg"
+                                required
+                                data-i18n="contacto.form.message"
+                                placeholder="Mensaje"
+                                rows={4}></textarea>
+                        </fieldset>
+                        <button
+                            class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 w-full sm:w-auto"
+                            type="submit"
+                            data-i18n="contacto.form.submit"
+                        >
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
-              <Icon name="lucide:mail" size={20} />
-            </div>
-            <div>
-              <p class="font-semibold" data-i18n="contacto.email">Escríbenos</p>
-              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.mail">info@fundacionalejandramejia.org</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-            <div class="bg-main text-white rounded-full w-12 h-12 flex items-center justify-center shrink-0">
-              <Icon name="lucide:map-pin" size={20} />
-            </div>
-            <div>
-              <p class="font-semibold" data-i18n="contacto.address">Dirección</p>
-              <p class="text-gray-600 dark:text-gray-300 text-sm" data-i18n="contacto.addr">Bogotá, Colombia</p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div>
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm dark:shadow-none border border-gray-200 dark:border-gray-700">
-          <h3 class="text-2xl font-semibold mb-2" data-i18n="contacto.form.title">Escríbenos</h3>
-          <form action="/" method="POST" class="mt-6 grid gap-4">
-            <fieldset class="fieldset">
-              <input
-                type="text"
-                class="input w-full"
-                id="contact-name"
-                name="contact_name"
-                required
-                data-i18n="contacto.form.name"
-                placeholder="Nombre"
-              />
-            </fieldset>
-            <fieldset class="fieldset">
-              <input
-                type="email"
-                class="input w-full"
-                id="contact-email"
-                name="contact_email"
-                required
-                data-i18n="contacto.form.email"
-                placeholder="Correo electrónico"
-              />
-            </fieldset>
-            <fieldset class="fieldset">
-              <textarea
-                class="textarea w-full"
-                id="contact-msg"
-                name="contact_msg"
-                required
-                data-i18n="contacto.form.message"
-                placeholder="Mensaje"
-                rows={4}
-              ></textarea>
-            </fieldset>
-            <button
-              class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 w-full sm:w-auto"
-              type="submit"
-              data-i18n="contacto.form.submit"
-            >
-              Enviar mensaje
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
 </section>

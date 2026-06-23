@@ -64,7 +64,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "contacto.address": "Dirección",
     "contacto.phone": "+57 xxx xxx xx xx",
     "contacto.mail": "info@fundacionalejandramejia.org",
-    "contacto.addr": "Bogotá, Colombia",
+    "contacto.addr": "Cali, Colombia",
     "contacto.form.title": "Escríbenos",
     "contacto.form.desc":
       "Déjanos tu mensaje y te responderemos a la brevedad posible.",
@@ -78,6 +78,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     "footer.nav.title": "Enlaces",
     "footer.contact.title": "Contacto",
     "footer.copyright": "Todos los derechos reservados.",
+
+    "stats.familias": "Familias beneficiadas",
+    "stats.empleos": "Empleos generados",
+    "stats.voluntarios": "Voluntarios activos",
+    "stats.anos": "Años de labor",
   },
 
   en: {
@@ -137,7 +142,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "contacto.address": "Address",
     "contacto.phone": "+57 xxx xxx xx xx",
     "contacto.mail": "info@fundacionalejandramejia.org",
-    "contacto.addr": "Bogotá, Colombia",
+    "contacto.addr": "Cali, Colombia",
     "contacto.form.title": "Get in Touch",
     "contacto.form.desc":
       "Leave us a message and we will get back to you as soon as possible.",
@@ -151,6 +156,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     "footer.nav.title": "Links",
     "footer.contact.title": "Contact",
     "footer.copyright": "All rights reserved.",
+
+    "stats.familias": "Families Benefited",
+    "stats.empleos": "Jobs Created",
+    "stats.voluntarios": "Active Volunteers",
+    "stats.anos": "Years of Service",
   },
 
   de: {
@@ -210,7 +220,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "contacto.address": "Adresse",
     "contacto.phone": "+57 xxx xxx xx xx",
     "contacto.mail": "info@fundacionalejandramejia.org",
-    "contacto.addr": "Bogotá, Kolumbien",
+    "contacto.addr": "Cali, Kolumbien",
     "contacto.form.title": "Schreiben Sie uns",
     "contacto.form.desc":
       "Hinterlassen Sie uns eine Nachricht und wir werden uns so schnell wie möglich bei Ihnen melden.",
@@ -224,5 +234,10 @@ export const translations: Record<Lang, Record<string, string>> = {
     "footer.nav.title": "Links",
     "footer.contact.title": "Kontakt",
     "footer.copyright": "Alle Rechte vorbehalten.",
+
+    "stats.familias": "Unterstützte Familien",
+    "stats.empleos": "Geschaffene Arbeitsplätze",
+    "stats.voluntarios": "Aktive Freiwillige",
+    "stats.anos": "Jahre im Dienst",
   },
 };
